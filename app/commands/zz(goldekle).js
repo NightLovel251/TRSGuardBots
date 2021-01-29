@@ -1,0 +1,36 @@
+const Discord = require('discord.js')
+const fs = require('fs');
+const db = require('quick.db');
+const ayarlar = require('../ayarlar.json')
+
+exports.run = async (client, message, args) => { 
+  
+if(message.author.id !== '657925820731621397') if(message.author.id !== '510479430917816340')
+    
+      return;
+  
+
+ const args0 = args[0];
+  if(!args0) {
+    message.channel.send("<a:no:793101866673111040> **Bir \`ID\` Belirtmelisin.**")
+  } else {
+  
+db.set(`premod_${args0}`, "aktif")
+  message.channel.send("<a:yes:793101776651681813> **\`Premium\` Üyelik Başlatıldı.**")
+}
+  }
+    
+exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: ['premium-ver'],
+    permLevel: 0,
+      
+}
+
+exports.help = {
+    name: 'premiumver',
+    description: '',
+    usage: '',
+
+}
